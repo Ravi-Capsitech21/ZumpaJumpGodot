@@ -222,10 +222,10 @@ _data = {
 [node name="MainScene" type="Area2D" unique_id=137434171]
 
 [node name="WinLine" type="Area2D" parent="." unique_id=1780482570]
+position = Vector2(946, -520)
 script = ExtResource("2_58gk3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WinLine" unique_id=1528022418]
-position = Vector2(966, -522)
 shape = SubResource("RectangleShape2D_k67gn")
 
 [node name="line" type="Sprite2D" parent="WinLine/CollisionShape2D" unique_id=207321173]
@@ -235,12 +235,11 @@ texture = ExtResource("3_to7gp")
 
 [node name="Shadow" type="Sprite2D" parent="WinLine" unique_id=1404402112]
 z_index = 1
-position = Vector2(1005, -520)
 scale = Vector2(1.2530864, 1.1024096)
 texture = ExtResource("4_u0fll")
 
 [node name="animation" type="Sprite2D" parent="." unique_id=1894104722]
-position = Vector2(1003, -517)
+position = Vector2(946, -520)
 texture = ExtResource("5_6p3nn")
 script = ExtResource("5_58gk3")
 
@@ -325,7 +324,7 @@ scale = Vector2(0.6278327, 0.6004036)
 texture = ExtResource("11_xdqt8")
 
 [node name="Enemy" type="Area2D" parent="." unique_id=1582844183]
-position = Vector2(361, 493)
+position = Vector2(361, 375)
 script = ExtResource("14_01n6w")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="Enemy" unique_id=833767426]
@@ -456,7 +455,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_kkokr")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_lhwp2")
 
 [node name="Enemy2" type="Area2D" parent="." unique_id=1728200031]
-position = Vector2(365, 178)
+position = Vector2(365, -63)
 script = ExtResource("18_bcnxi")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="Enemy2" unique_id=1304838843]

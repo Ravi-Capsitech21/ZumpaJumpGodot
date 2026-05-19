@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://coiadp1a31alf"]
 
-[ext_resource type="Script" uid="uid://bwn74q1e0642c" path="res://loading.gd" id="1_ir5ef"]
+[ext_resource type="Script" uid="uid://crf1u04ghm2ix" path="res://Scripts/loading.gd" id="1_yt702"]
 [ext_resource type="Texture2D" uid="uid://cw7vtth2ggyg3" path="res://assets/Group 362.png" id="2_101rs"]
 [ext_resource type="Texture2D" uid="uid://duuqccm6pwsbj" path="res://assets/loading cover.png" id="2_dhqfv"]
 [ext_resource type="Texture2D" uid="uid://bv3foy31u68f0" path="res://assets/loading fill-up.png" id="3_101rs"]
@@ -13,7 +13,7 @@ texture = ExtResource("2_dhqfv")
 texture = ExtResource("3_101rs")
 
 [node name="loading" type="Node2D" unique_id=218875884]
-script = ExtResource("1_ir5ef")
+script = ExtResource("1_yt702")
 
 [node name="BgImage" type="TextureRect" parent="." unique_id=1352717834]
 offset_right = 1918.0

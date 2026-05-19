@@ -1,10 +1,16 @@
 [gd_scene format=3 uid="uid://dphrvolcbj26v"]
 
 [ext_resource type="Texture2D" uid="uid://cw7vtth2ggyg3" path="res://assets/Group 362.png" id="1_3ttfa"]
-[ext_resource type="PackedScene" uid="uid://v67adchdg5px" path="res://scenes/player.tscn" id="2_qwpll"]
+[ext_resource type="Script" uid="uid://blgcpnbt86brp" path="res://YogeshScripts/Scripts/win_line.gd" id="1_rqi33"]
+[ext_resource type="Texture2D" uid="uid://ltn7o6avtpx3" path="res://YogeshAssets/Group 200.png" id="2_dj1r7"]
+[ext_resource type="PackedScene" uid="uid://ofop1ep0gqae" path="res://YogeshScenes/Scenes/player.tscn" id="2_v63pg"]
+[ext_resource type="Texture2D" uid="uid://cnhogkibe5mxa" path="res://YogeshAssets/Union.png" id="3_mg484"]
 [ext_resource type="Texture2D" uid="uid://dv5vnlllgcj82" path="res://assets/Group 210.png" id="3_v63pg"]
+[ext_resource type="Texture2D" uid="uid://clhjupgrl6f4s" path="res://YogeshAssets/Group 201.png" id="4_27c8d"]
 [ext_resource type="Texture2D" uid="uid://b574he0frap7c" path="res://assets/Rectangle 93.png" id="4_mr1bn"]
+[ext_resource type="Script" uid="uid://bq74lrye87bur" path="res://YogeshScripts/Scripts/animation.gd" id="5_m1tv4"]
 [ext_resource type="Script" uid="uid://e4w61lc814r2" path="res://Scripts/obstacles.gd" id="5_qgkrp"]
+[ext_resource type="Texture2D" uid="uid://dmu7hk8cb7pn" path="res://assets/Loading screen.png" id="6_svbv1"]
 [ext_resource type="Texture2D" uid="uid://cih3uoq3cqaj1" path="res://assets/Group 169.png" id="6_vo4vj"]
 [ext_resource type="Script" uid="uid://x256s7om5aam" path="res://Scripts/pause_pannel.gd" id="7_vbsd7"]
 [ext_resource type="Texture2D" uid="uid://br5p7w4jvb6vy" path="res://assets/Pause icon.png" id="8_ffys1"]
@@ -15,6 +21,9 @@
 [ext_resource type="Texture2D" uid="uid://bbui4kv8aw472" path="res://assets/Group 229.png" id="13_m1tv4"]
 [ext_resource type="Texture2D" uid="uid://da6tk23ssrcdc" path="res://assets/Group 439.png" id="14_qwpll"]
 [ext_resource type="Script" uid="uid://bgen41bwvgx1d" path="res://Scripts/spring.gd" id="14_v63pg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mifa2"]
+size = Vector2(1440, 11)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r6p65"]
 size = Vector2(250.96399, 15.954712)
@@ -102,14 +111,45 @@ _data = {
 
 [node name="lvl_3" type="Area2D" unique_id=137434171]
 
+[node name="WinLine" type="Area2D" parent="." unique_id=1936928344]
+position = Vector2(0, -154.81616)
+script = ExtResource("1_rqi33")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WinLine" unique_id=337396522]
+position = Vector2(966, -522)
+shape = SubResource("RectangleShape2D_mifa2")
+
+[node name="line" type="Sprite2D" parent="WinLine/CollisionShape2D" unique_id=1888878035]
+position = Vector2(-1, 1.5)
+scale = Vector2(1.7600001, 1)
+texture = ExtResource("2_dj1r7")
+
+[node name="Shadow" type="Sprite2D" parent="WinLine" unique_id=368670124]
+z_index = 1
+position = Vector2(1005, -520)
+scale = Vector2(1.2530864, 1.1024096)
+texture = ExtResource("3_mg484")
+
+[node name="animation" type="Sprite2D" parent="." unique_id=1735454300]
+position = Vector2(1003, -671.81616)
+texture = ExtResource("4_27c8d")
+script = ExtResource("5_m1tv4")
+
+[node name="UpperBackground" type="Sprite2D" parent="." unique_id=1084715718]
+z_index = -1
+position = Vector2(927, -1042.8163)
+rotation = 3.140948
+scale = Vector2(1.8400006, 1.6800768)
+texture = ExtResource("6_svbv1")
+
 [node name="background" type="Sprite2D" parent="." unique_id=1619610707]
 z_index = -1
-position = Vector2(960, 539.5)
-scale = Vector2(2.008368, 2.4522727)
+position = Vector2(960, 201.00003)
+scale = Vector2(2.008368, 3.990909)
 texture = ExtResource("1_3ttfa")
 
-[node name="Player" parent="." unique_id=279456674 instance=ExtResource("2_qwpll")]
-position = Vector2(977, 704)
+[node name="Player" parent="." unique_id=417709625 instance=ExtResource("2_v63pg")]
+position = Vector2(961, 627)
 
 [node name="Platform" type="Sprite2D" parent="." unique_id=750368747]
 position = Vector2(-20, 742.99994)
@@ -125,8 +165,8 @@ shape = SubResource("RectangleShape2D_r6p65")
 
 [node name="LeftWall" type="StaticBody2D" parent="." unique_id=254514730]
 z_index = -1
-position = Vector2(175, 104.00003)
-scale = Vector2(1.6767241, 1.7555556)
+position = Vector2(175, 17)
+scale = Vector2(1.6767241, 2.1955552)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall" unique_id=1763330301]
 scale = Vector2(1.0000002, 1)
@@ -139,8 +179,8 @@ texture = ExtResource("4_mr1bn")
 
 [node name="RightWall" type="StaticBody2D" parent="." unique_id=389941450]
 z_index = -1
-position = Vector2(1750.0001, 101.00001)
-scale = Vector2(1.6767241, 1.7555556)
+position = Vector2(1749.9999, 23)
+scale = Vector2(1.6767241, 2.1955554)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall" unique_id=1765626149]
 scale = Vector2(1.0000002, 1)
@@ -153,9 +193,9 @@ texture = ExtResource("4_mr1bn")
 
 [node name="Wall2" type="StaticBody2D" parent="." unique_id=1839136032]
 z_index = -1
-position = Vector2(1413, 336)
+position = Vector2(1413, 321)
 rotation = 4.712389
-scale = Vector2(1.6767241, 1.7555556)
+scale = Vector2(1.3567244, 1.7555556)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2" unique_id=1478826685]
 position = Vector2(0, -3.7025146)
@@ -169,9 +209,9 @@ texture = ExtResource("4_mr1bn")
 
 [node name="Wall3" type="StaticBody2D" parent="." unique_id=985701674]
 z_index = -1
-position = Vector2(546, -236.00003)
+position = Vector2(546, -238)
 rotation = 4.712389
-scale = Vector2(1.6767241, 1.7555556)
+scale = Vector2(1.4367241, 1.7555556)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall3" unique_id=2020677171]
 position = Vector2(0, -3.7025146)
@@ -207,16 +247,18 @@ texture = ExtResource("6_vo4vj")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Obstacles" unique_id=1352450839]
 z_index = -1
-position = Vector2(189.00002, -620)
+position = Vector2(189.91225, -603.1473)
 rotation = -1.5789411
 scale = Vector2(0.5155529, 0.49200115)
 texture = ExtResource("6_vo4vj")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Obstacles" unique_id=508736761]
-position = Vector2(189, -610)
+position = Vector2(189.91223, -593.1473)
 shape = SubResource("RectangleShape2D_v63pg")
 
-[node name="PausePannel" type="Control" parent="." unique_id=1060008530]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1221784145]
+
+[node name="PausePannel" type="Control" parent="CanvasLayer" unique_id=1060008530]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1916.0
@@ -224,7 +266,7 @@ offset_bottom = 1073.0
 script = ExtResource("7_vbsd7")
 metadata/_edit_use_anchors_ = true
 
-[node name="PauseBtn" type="Button" parent="PausePannel" unique_id=1818087250]
+[node name="PauseBtn" type="Button" parent="CanvasLayer/PausePannel" unique_id=1818087250]
 z_index = 1
 layout_mode = 1
 anchors_preset = 1
@@ -240,7 +282,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_to7gp")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_01n6w")
 icon_alignment = 1
 
-[node name="PauseMenu" type="Control" parent="PausePannel" unique_id=209401814]
+[node name="PauseMenu" type="Control" parent="CanvasLayer/PausePannel" unique_id=209401814]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -255,7 +297,7 @@ offset_bottom = 125.025024
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BackBtn" type="Button" parent="PausePannel/PauseMenu" unique_id=809208589]
+[node name="BackBtn" type="Button" parent="CanvasLayer/PausePannel/PauseMenu" unique_id=809208589]
 z_index = 1
 layout_mode = 1
 offset_left = -551.0
@@ -269,7 +311,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_to7gp")
 icon = ExtResource("9_rqi33")
 icon_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="PausePannel/PauseMenu" unique_id=481271746]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/PausePannel/PauseMenu" unique_id=481271746]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -284,7 +326,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("10_dj1r7")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PausePannel/PauseMenu/TextureRect" unique_id=1170966751]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/PausePannel/PauseMenu/TextureRect" unique_id=1170966751]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -300,21 +342,21 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="ResumeButton" type="Button" parent="PausePannel/PauseMenu/TextureRect/HBoxContainer" unique_id=1689728136]
+[node name="ResumeButton" type="Button" parent="CanvasLayer/PausePannel/PauseMenu/TextureRect/HBoxContainer" unique_id=1689728136]
 layout_mode = 2
 theme_override_icons/icon = ExtResource("11_mg484")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_u0fll")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_6p3nn")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_k67gn")
 
-[node name="RestartButton" type="Button" parent="PausePannel/PauseMenu/TextureRect/HBoxContainer" unique_id=502372115]
+[node name="RestartButton" type="Button" parent="CanvasLayer/PausePannel/PauseMenu/TextureRect/HBoxContainer" unique_id=502372115]
 layout_mode = 2
 theme_override_icons/icon = ExtResource("12_27c8d")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_k3g67")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_4bgka")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_02d50")
 
-[node name="HomeButton" type="Button" parent="PausePannel/PauseMenu/TextureRect/HBoxContainer" unique_id=1547974922]
+[node name="HomeButton" type="Button" parent="CanvasLayer/PausePannel/PauseMenu/TextureRect/HBoxContainer" unique_id=1547974922]
 layout_mode = 2
 theme_override_icons/icon = ExtResource("13_m1tv4")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_pgk25")
@@ -323,7 +365,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_lhwp2")
 
 [node name="Spring" type="Area2D" parent="." unique_id=464745612]
 z_index = -1
-position = Vector2(770, 559)
+position = Vector2(566, 400)
 script = ExtResource("14_v63pg")
 
 [node name="Sprite2D" type="Sprite2D" parent="Spring" unique_id=674580955]
@@ -341,9 +383,8 @@ autoplay = &"RESET"
 speed_scale = 1.5
 
 [connection signal="body_entered" from="Obstacles" to="Obstacles" method="_on_body_entered"]
-[connection signal="pressed" from="PausePannel/PauseBtn" to="PausePannel" method="_on_pause_btn_pressed"]
-[connection signal="pressed" from="PausePannel/PauseMenu/BackBtn" to="PausePannel" method="_on_back_btn_pressed"]
-[connection signal="pressed" from="PausePannel/PauseMenu/TextureRect/HBoxContainer/ResumeButton" to="PausePannel" method="_on_resume_button_pressed"]
-[connection signal="pressed" from="PausePannel/PauseMenu/TextureRect/HBoxContainer/RestartButton" to="PausePannel" method="_on_restart_button_pressed"]
-[connection signal="pressed" from="PausePannel/PauseMenu/TextureRect/HBoxContainer/HomeButton" to="PausePannel" method="_on_home_button_pressed"]
-[connection signal="body_entered" from="Spring" to="Player" method="_on_spring_body_entered"]
+[connection signal="pressed" from="CanvasLayer/PausePannel/PauseBtn" to="CanvasLayer/PausePannel" method="_on_pause_btn_pressed"]
+[connection signal="pressed" from="CanvasLayer/PausePannel/PauseMenu/BackBtn" to="CanvasLayer/PausePannel" method="_on_back_btn_pressed"]
+[connection signal="pressed" from="CanvasLayer/PausePannel/PauseMenu/TextureRect/HBoxContainer/ResumeButton" to="CanvasLayer/PausePannel" method="_on_resume_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PausePannel/PauseMenu/TextureRect/HBoxContainer/RestartButton" to="CanvasLayer/PausePannel" method="_on_restart_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PausePannel/PauseMenu/TextureRect/HBoxContainer/HomeButton" to="CanvasLayer/PausePannel" method="_on_home_button_pressed"]

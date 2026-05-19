@@ -6,7 +6,7 @@ func _ready():
 	body_entered.connect(_on_body_entered)   
 
 func _process(delta):
-	pass
+	global_position = global_position.round()
 
 #  Collision
 func _on_body_entered(body):

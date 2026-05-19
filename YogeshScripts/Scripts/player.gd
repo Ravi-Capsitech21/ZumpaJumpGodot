@@ -18,6 +18,8 @@ var animation_locked = false
 var spawn_position: Vector2
 var is_dead = false
 
+var spring = -600
+
 
 func _ready():
 
@@ -224,3 +226,6 @@ func respawn():
 
 	camera.position_smoothing_enabled = true
 	camera.position_smoothing_speed = 1.0
+
+func _on_spring_body_entered(body: Node2D) -> void:
+	velocity.y = spring
