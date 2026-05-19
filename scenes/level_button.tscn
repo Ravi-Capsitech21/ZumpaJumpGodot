@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://b2ur1xb3ce575"]
+
+[ext_resource type="Texture2D" uid="uid://w1ap0vrcv748" path="res://assets/bg.png" id="1_6g3el"]
+[ext_resource type="Texture2D" uid="uid://6oy4imr5mclu" path="res://assets/Group 425 (1).png" id="2_ium1h"]
+[ext_resource type="Script" uid="uid://2ywuidcbqmvx" path="res://Scripts/texture_button.gd" id="3_nfgsp"]
+[ext_resource type="FontFile" uid="uid://clw3fvh0kjky6" path="res://Fonts/Vito Bold.otf" id="4_b0rp6"]
+
+[node name="LevelButton" type="TextureButton" unique_id=455143088]
+offset_left = 229.0
+offset_top = 306.0
+offset_right = 315.0
+offset_bottom = 392.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+texture_normal = ExtResource("1_6g3el")
+texture_disabled = ExtResource("2_ium1h")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("3_nfgsp")
+
+[node name="Label" type="Label" parent="." unique_id=1550368966]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("4_b0rp6")
+theme_override_font_sizes/font_size = 35
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

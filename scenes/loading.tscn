@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://coiadp1a31alf"]
+
+[ext_resource type="Script" uid="uid://bwn74q1e0642c" path="res://loading.gd" id="1_ir5ef"]
+[ext_resource type="Texture2D" uid="uid://cw7vtth2ggyg3" path="res://assets/Group 362.png" id="2_101rs"]
+[ext_resource type="Texture2D" uid="uid://duuqccm6pwsbj" path="res://assets/loading cover.png" id="2_dhqfv"]
+[ext_resource type="Texture2D" uid="uid://bv3foy31u68f0" path="res://assets/loading fill-up.png" id="3_101rs"]
+[ext_resource type="Texture2D" uid="uid://bl6famxfp5gqk" path="res://assets/Group 1.png" id="3_yt702"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yt702"]
+texture = ExtResource("2_dhqfv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2ytni"]
+texture = ExtResource("3_101rs")
+
+[node name="loading" type="Node2D" unique_id=218875884]
+script = ExtResource("1_ir5ef")
+
+[node name="BgImage" type="TextureRect" parent="." unique_id=1352717834]
+offset_right = 1918.0
+offset_bottom = 1077.0
+texture = ExtResource("2_101rs")
+
+[node name="GameName" type="TextureRect" parent="BgImage" unique_id=1401348619]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -115.0
+offset_top = 167.0
+offset_right = 122.0
+offset_bottom = 292.0
+grow_horizontal = 2
+texture = ExtResource("3_yt702")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=891237163]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 833.0
+offset_top = 578.0
+offset_right = 1116.0
+offset_bottom = 608.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxTexture_yt702")
+theme_override_styles/fill = SubResource("StyleBoxTexture_2ytni")

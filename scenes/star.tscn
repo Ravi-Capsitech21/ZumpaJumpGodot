@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bpcxssn1exlcw"]
+
+[ext_resource type="Script" uid="uid://dfayy7gpd0i6c" path="res://Scripts/star.gd" id="1_j6vao"]
+[ext_resource type="Texture2D" uid="uid://cjqrv6hq7e0a8" path="res://assets/str.png" id="2_j6vao"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ef0hr"]
+size = Vector2(49, 57)
+
+[node name="Star" type="Area2D" unique_id=1176012600]
+position = Vector2(521, 292)
+script = ExtResource("1_j6vao")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=52206127]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_ef0hr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=208756612]
+position = Vector2(1.0000037, 1)
+scale = Vector2(0.41538462, 0.43548387)
+texture = ExtResource("2_j6vao")

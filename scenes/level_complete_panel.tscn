@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://hk7oi4l5exsl"]
+
+[ext_resource type="Script" uid="uid://c7x43216pshwr" path="res://Scripts/level_complete_panel.gd" id="1_7ge0h"]
+[ext_resource type="Texture2D" uid="uid://bsvvjnmvey21s" path="res://assets/level complete screen.png" id="2_5qbw5"]
+[ext_resource type="Texture2D" uid="uid://hiui2pmnbav3" path="res://assets/Group 133.png" id="3_gto2t"]
+[ext_resource type="Texture2D" uid="uid://dgfixsh08bm67" path="res://assets/Level complete.png" id="4_jirbl"]
+[ext_resource type="Texture2D" uid="uid://dle1oa24fc5je" path="res://assets/Star 5.png" id="6_gto2t"]
+[ext_resource type="Texture2D" uid="uid://yb7qnbvefbkw" path="res://assets/Next button.png" id="6_qjecw"]
+[ext_resource type="Texture2D" uid="uid://bt58gwtxchnw7" path="res://assets/Star 4.png" id="7_jirbl"]
+[ext_resource type="Texture2D" uid="uid://b5oskcrnni621" path="res://assets/Star 3.png" id="8_2hnm7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_036us"]
+texture = ExtResource("2_5qbw5")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nsw0g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jxpht"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_chglr"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2lt3i"]
+texture = ExtResource("4_jirbl")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_38dbo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dy7mf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tugda"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qjecw"]
+texture = ExtResource("6_gto2t")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e0pkv"]
+texture = ExtResource("7_jirbl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uemsn"]
+texture = ExtResource("8_2hnm7")
+
+[node name="LevelCompletePanel" type="Control" unique_id=1322715221]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7ge0h")
+
+[node name="Panel" type="Panel" parent="." unique_id=1295939454]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_036us")
+
+[node name="BackButton" type="Button" parent="." unique_id=1462148604]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.062000003
+anchor_bottom = 0.127
+offset_right = -0.22000122
+offset_bottom = -0.05999756
+theme_override_icons/icon = ExtResource("3_gto2t")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nsw0g")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jxpht")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_chglr")
+
+[node name="Label" type="Panel" parent="." unique_id=1550417146]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.38300002
+anchor_top = 0.252
+anchor_right = 0.62700003
+anchor_bottom = 0.559
+offset_left = 0.6399536
+offset_top = -0.16000366
+offset_right = 0.15991211
+offset_bottom = 0.27996826
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_2lt3i")
+
+[node name="NextButton" type="Button" parent="Label" unique_id=1189702666]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.231
+anchor_top = 0.67800003
+anchor_right = 0.76900005
+anchor_bottom = 0.892
+offset_left = -0.10800171
+offset_top = -0.0960083
+offset_right = 0.10797119
+offset_bottom = -0.14401245
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_icons/icon = ExtResource("6_qjecw")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_38dbo")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_dy7mf")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tugda")
+
+[node name="Star1" type="Label" parent="Label" unique_id=1245807445]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.132
+anchor_top = 0.41000003
+anchor_right = 0.323
+anchor_bottom = 0.67800003
+offset_left = 0.22399902
+offset_top = -0.120010376
+offset_right = -0.16400146
+offset_bottom = -0.0960083
+theme_override_styles/normal = SubResource("StyleBoxTexture_qjecw")
+
+[node name="Star2" type="Label" parent="Label" unique_id=259949611]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.34800002
+anchor_top = 0.26200002
+anchor_right = 0.63900006
+anchor_bottom = 0.62
+offset_left = 0.13598633
+offset_top = 0.015991211
+offset_right = -97.38866
+offset_bottom = -94.335846
+scale = Vector2(3.5175412, 4.8563194)
+theme_override_styles/normal = SubResource("StyleBoxTexture_e0pkv")
+
+[node name="Star3" type="Label" parent="Label" unique_id=1465049179]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.665
+anchor_top = 0.41000003
+anchor_right = 0.85700005
+anchor_bottom = 0.67800003
+offset_left = -0.22000122
+offset_top = -0.120010376
+offset_right = -0.07601929
+offset_bottom = -0.0960083
+theme_override_styles/normal = SubResource("StyleBoxTexture_uemsn")
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Label/NextButton" to="." method="_on_next_button_pressed"]
