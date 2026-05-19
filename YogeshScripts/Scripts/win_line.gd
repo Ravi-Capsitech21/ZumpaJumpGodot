@@ -19,4 +19,4 @@ func _on_body_entered(body):
 		await get_tree().create_timer(slow_motion_time * slow_motion_scale).timeout
 
 		# normal speed
-		Engine.time_scale = 2.0
+		Engine.time_scale = 1.0
