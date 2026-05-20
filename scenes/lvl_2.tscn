@@ -8,8 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://babbnsxjqayli" path="res://assets/Rectangle 152.png" id="4_5emcn"]
 [ext_resource type="Texture2D" uid="uid://clhjupgrl6f4s" path="res://YogeshAssets/Group 201.png" id="4_vhfxh"]
 [ext_resource type="Script" uid="uid://bq74lrye87bur" path="res://YogeshScripts/Scripts/animation.gd" id="5_5j4go"]
-[ext_resource type="Texture2D" uid="uid://dmu7hk8cb7pn" path="res://assets/Loading screen.png" id="6_bd3eg"]
-[ext_resource type="Texture2D" uid="uid://cih3uoq3cqaj1" path="res://assets/Group 169.png" id="6_vhfxh"]
+[ext_resource type="Texture2D" uid="uid://dmu7hk8cb7pn" path="res://YogeshAssets/Loading screen.png" id="6_bd3eg"]
+[ext_resource type="Texture2D" uid="uid://cih3uoq3cqaj1" path="res://YogeshAssets/Group 169.png" id="6_vhfxh"]
 [ext_resource type="Texture2D" uid="uid://b45fxukguxs6n" path="res://assets/Frame 8.png" id="7_5j4go"]
 [ext_resource type="PackedScene" uid="uid://ofop1ep0gqae" path="res://YogeshScenes/Scenes/player.tscn" id="8_5emcn"]
 [ext_resource type="Script" uid="uid://x256s7om5aam" path="res://Scripts/pause_pannel.gd" id="11_1osul"]
@@ -88,20 +88,21 @@ size = Vector2(232.4632, 1578.9241)
 [node name="Lvl2" type="Area2D" unique_id=137434171]
 
 [node name="WinLine" type="Area2D" parent="." unique_id=1839816708]
+position = Vector2(963, -521)
 script = ExtResource("1_422u3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WinLine" unique_id=1329566151]
-position = Vector2(966, -522)
 shape = SubResource("RectangleShape2D_hajku")
 
 [node name="line" type="Sprite2D" parent="WinLine/CollisionShape2D" unique_id=1660364865]
-position = Vector2(-1, 1.5)
-scale = Vector2(1.7600001, 1)
+z_index = 1
+position = Vector2(-13.349303, 3.2499847)
+scale = Vector2(1.698647, 1.3499969)
 texture = ExtResource("2_5emcn")
 
 [node name="Shadow" type="Sprite2D" parent="WinLine" unique_id=1960005268]
 z_index = 1
-position = Vector2(1005, -520)
+position = Vector2(42, 0)
 scale = Vector2(1.2530864, 1.1024096)
 texture = ExtResource("3_44hrr")
 

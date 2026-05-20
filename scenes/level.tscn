@@ -43,6 +43,8 @@ offset_left = 0.32798767
 offset_top = 0.11199188
 offset_right = -0.60809326
 offset_bottom = -0.2640381
+grow_horizontal = 2
+grow_vertical = 2
 columns = 5
 
 [node name="Button2" type="Button" parent="GridContainer" unique_id=1362801749]

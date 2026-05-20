@@ -237,6 +237,3 @@ func respawn():
 
 	camera.position_smoothing_enabled = true
 	camera.position_smoothing_speed = 1.0
-
-func _on_spring_body_entered(body: Node2D) -> void:
-	velocity.y = spring

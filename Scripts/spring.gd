@@ -1,11 +1,23 @@
 extends Area2D
 
-func _physics_process(delta):
-	var bodies = get_overlapping_bodies()
-	for body in bodies:
-		if body.is_in_group("player"):
-			$AnimationPlayer.play("RESET")
-			$AnimationPlayer.animation_finished
-			$AnimationPlayer.play("new_animation")
-		else:
-			$AnimationPlayer.play("new_animation")
+@export var spring_force := -900
+
+func _ready():
+
+	# connect collision
+	body_entered.connect(_on_body_entered)
+
+	# stop animation initially
+	$AnimationPlayer.stop()
+
+
+func _on_body_entered(body):
+
+	# check player
+	if body.is_in_group("player"):
+
+		# bounce player upward
+		body.velocity.y = spring_force
+
+		# play spring animation
+		$AnimationPlayer.play("new_animation")
