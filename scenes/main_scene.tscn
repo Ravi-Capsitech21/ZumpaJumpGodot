@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://gsb87c05tuis"]
 
-[ext_resource type="Texture2D" uid="uid://dmu7hk8cb7pn" path="res://assets/Loading screen.png" id="1_adb74"]
+[ext_resource type="Texture2D" uid="uid://dmu7hk8cb7pn" path="res://YogeshAssets/Loading screen.png" id="1_adb74"]
 [ext_resource type="Texture2D" uid="uid://cw7vtth2ggyg3" path="res://assets/Group 362.png" id="1_e1cbu"]
 [ext_resource type="Script" uid="uid://blgcpnbt86brp" path="res://YogeshScripts/Scripts/win_line.gd" id="2_58gk3"]
 [ext_resource type="Texture2D" uid="uid://dv5vnlllgcj82" path="res://assets/Group 210.png" id="2_mngbo"]
@@ -15,9 +15,10 @@
 [ext_resource type="Texture2D" uid="uid://cimhbdt7pi57x" path="res://assets/Group 424.png" id="6_01n6w"]
 [ext_resource type="Texture2D" uid="uid://db6xlm5mpopum" path="res://assets/Group 231.png" id="7_6u1mn"]
 [ext_resource type="Texture2D" uid="uid://10wg35en3out" path="res://assets/Group 230.png" id="8_bcnxi"]
+[ext_resource type="PackedScene" uid="uid://bpcxssn1exlcw" path="res://scenes/star.tscn" id="8_to7gp"]
 [ext_resource type="Texture2D" uid="uid://bbui4kv8aw472" path="res://assets/Group 229.png" id="9_7nt27"]
 [ext_resource type="Texture2D" uid="uid://babbnsxjqayli" path="res://assets/Rectangle 152.png" id="10_k6f3i"]
-[ext_resource type="Texture2D" uid="uid://cih3uoq3cqaj1" path="res://assets/Group 169.png" id="11_xdqt8"]
+[ext_resource type="Texture2D" uid="uid://cih3uoq3cqaj1" path="res://YogeshAssets/Group 169.png" id="11_xdqt8"]
 [ext_resource type="Script" uid="uid://vjtolwui3l1f" path="res://Scripts/enemy.gd" id="14_01n6w"]
 [ext_resource type="Texture2D" uid="uid://b0437ji5hw68h" path="res://assets/tanticles (2).png" id="15_6u1mn"]
 [ext_resource type="Texture2D" uid="uid://cprgex8j7vyr1" path="res://assets/Group 202.png" id="16_bcnxi"]
@@ -255,6 +256,9 @@ z_index = -1
 position = Vector2(960, 277.00003)
 scale = Vector2(2.008368, 3.645455)
 texture = ExtResource("1_e1cbu")
+
+[node name="Star" parent="." unique_id=1176012600 instance=ExtResource("8_to7gp")]
+position = Vector2(832, 575)
 
 [node name="Player2" parent="." unique_id=417709625 instance=ExtResource("3_7nt27")]
 z_index = 103

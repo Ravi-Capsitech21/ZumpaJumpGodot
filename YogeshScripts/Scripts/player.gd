@@ -8,6 +8,7 @@ extends CharacterBody2D
 @export var wall_bounce_force = 350
 @export var wall_bounce_jump = 0.6
 
+var stars_collected := 0
 var direction = 0
 var start_direction = 0
 
@@ -100,6 +101,16 @@ func _physics_process(delta):
 	if not animation_locked:
 		update_animation()
 
+
+func collect_star():
+
+	stars_collected += 1
+
+	print("Stars Collected: ", stars_collected)
+
+	
+	#if stars_collected >= 3:
+		#win_level()
 
 # TOUCH INPUT
 
